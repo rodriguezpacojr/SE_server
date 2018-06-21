@@ -17,8 +17,6 @@
                     You are logged in!
                 </div>
             </div>
-            <passport-clients></passport-clients>
-            <passport-authorized-clients></passport-authorized-clients>
         </div>
     </div>
 </div>

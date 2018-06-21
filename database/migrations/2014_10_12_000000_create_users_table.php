@@ -18,9 +18,27 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            //$table->enum('rol', ['alumno', 'administrador', 'instructor'])->default('alumno');
             $table->rememberToken();
             $table->timestamps();
         });
+
+        /*
+        //Many to Many
+        //En orden alfabetico y en singular
+        Schema::create('alumno_curso', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('alumno_id')->unsigned();
+            $table->integer('curso_id')->unsigned();
+            $table->string('faltas');
+            $table->string('calificacion');
+
+            $table->foreign('alumno_id')->references('id')->on('alumno');
+            $table->foreign('curso_id')->references('id')->on('programa');
+
+            $table->timestamps();
+        });
+        */
     }
 
     /**
